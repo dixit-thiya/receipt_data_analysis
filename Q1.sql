@@ -4,9 +4,9 @@
 SELECT *
 FROM   (SELECT NAME as name,
                total_receipt_count,
-               Dense_rank()
+               Dense_rank() -- Creating rank based on the number of receipt scan to make sure we include all the ranks that are less than 6
                  OVER(
-                   ORDER BY total_receipt_count DESC) AS rnk
+                   ORDER BY total_receipt_count DESC) AS rnk -- there can be a use case where two brands have same number for receipt scanned.
         FROM  (SELECT NAME,
                       Count(NAME) AS total_receipt_count
                FROM   (SELECT receiptid,
