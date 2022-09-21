@@ -6,7 +6,8 @@ SELECT
 FROM
     receipt
 WHERE
-    rewardsreceiptstatus IN ('REJECTED' , 'FINISHED')
+-- Only looking at 'REJECTED' and 'FINISHED' status in the rewardsreceiptstatus column
+    rewardsreceiptstatus IN ('REJECTED' , 'FINISHED') -- Couldn't find 'Accepted' status in the column so instead using 'FINISHED' as accepted
 GROUP BY rewardsreceiptstatus
 ORDER BY avg_spend DESC
 LIMIT 1;
