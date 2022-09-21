@@ -1,4 +1,5 @@
 -- What are the top 5 brands by receipts scanned for most recent month?
+-- I'm using mysql language to query the results
 
 SELECT *
 FROM   (SELECT NAME as name,
