@@ -1,7 +1,7 @@
 # Analysis
 
 Assumptions:
-1. receiptItemId is a the primary key in the receiptItem table which is linked ot receiptID
+1. receiptItemId is a the primary key in the receiptItem table which is linked to receiptID
 2. If the deleted field is Yes then the item will not counted as a purchased product (When a product is returned)
 3. We have considered counting one brand only once in one reciept becuase if that defines the popularity of the brands.
 	-If one receipt has 50 items of same brands and other hand one brand is present on 50 receipt that means 2nd case has more popularity.
