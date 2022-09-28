@@ -11,7 +11,9 @@ Assumptions:
 Construct an email or slack message that is understandable to a product or business leader who isn’t familiar with your day to day work. This part of the exercise should show off how you communicate and reason about data with others. Commit your answers to the git repository along with the rest of your exercise.
 
 ### 1. What questions do you have about the data?
-A:	The different date fields captured in the receipts dataset such as dateScanned, finishDate, createDate,etc. why do we have different types of dates and how are they significant to the business?
+A:	The different date fields captured in the receipts dataset such as dateScanned, finishDate, createDate,etc. Why do we have different types of dates and how are each of them significant to the business?\
+\
+2. Why are userid repeated in the users dataset? 
 
 ### 2.	How did you discover the data quality issues?
 A: 1. During the exploratory data analysis stage I found out that the users data has key value pair of '_id' that stores the user id for each user. I found out duplicate dictiories for mulitple user ids in the user data file. Given that I am using the userID as the primary key for the users table. The userid should be unique and in the users data file.\
@@ -25,6 +27,14 @@ A:	Understanding the process of the data collection and the reason behind why we
 
 ### 4. What other information would you need to help you optimize the data assets you're trying to create?
 A: 
+1. RFM (Recency, Frequency, Monetary) Analysis
+2. Brand led customer data
+3. Converting Marketing leads to sales qualified leads: This data can help us understand customer behaviour and can drive verious decisions for marketing team to design new campaingns for products as well as partnership team to acquire new partners
+
 
 ### 5. What performance and scaling concerns do you anticipate in production and how do you plan to address them?
-A: If we don't remove duplicates from the users dataset, It might lead us to wrong direction. Removing duplicates increases one more step to achieve data integrity of the database. 
+A: 1. If we don't remove duplicates from the users dataset, It might lead us to wrong direction. Removing duplicates increases one more step to achieve data integrity of the database.\
+2. Missing data points such as brandcode and brandcode in receiptItemList will give us incomplete analysis on sales of the products. 
+\
+To solve the above issues we need to work better on the data collection and interpretation of data via OCR.
+When you're scaling your database, it is important to not allow for any redundancies. Redundancies occur when there are several entries in database that contains similar information. 
